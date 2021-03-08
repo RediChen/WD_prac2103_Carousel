@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: antiqueWhite;
+    a {
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: deepSkyBlue;
+        }
+        &:hover {
+            color: mediumOrchid;
+        }
+        &:active {
+            color: skyBlue;
+        }
+    }
+}
+@mixin font-zh($fz, $wt) {
+    //wt = 300, 500, 700, 900
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: $fz;
+    font-weight: $wt;
+}
+//通用設定 END =========================
+#slider-box {
+    //為了要絕對定位的子元素
+    position: relative;
+    //上圖
+    @for $i from 1 through 3 {
+        .slider:nth-of-type(#{$i}) {
+            background-image: url(../img/slider0#{$i}.jpg);
+        }
+    }
+    //基本樣式
+    .slider {
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        //動畫套用：全寫型態
+        animation-name: slider-img-show;
+        animation-duration: 2s; //持續時間、不寫預設0s
+
+        h1 {
+            @include font-zh(4.5em, 700);
+            color: white;
+            text-shadow: 0 3px 4px rgba(black, 0.3);
+            padding: 90px 120px;
+            //動畫套用：簡寫型態
+            animation: slider-text-show 1s .5s backwards;
+            //* backwards 表示動畫前顯示的模式與動畫開頭狀態相同
+            //* forwards  表示動畫前顯示的模式與動畫結束狀態相同（預設）
+        }
+    }
+    //上一張、下一張切換鈕
+    .next-btn {
+        width: 0;
+        height: 0;
+        border: 50px solid;
+        position: absolute;
+    }
+    $c-btn: rgba(white, 0.4);
+    #prev {
+        border-color: transparent $c-btn transparent transparent;
+    }
+    #next {
+        border-color: transparent transparent transparent $c-btn;
+    }
+}
+//動畫宣告 =========================
+@keyframes slider-img-show {
+    0% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes slider-text-show {
+    0% {
+        transform: translateX(-30vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

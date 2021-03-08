@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: antiqueWhite;
+}
+
+body a, body a:link, body a:visited {
+  text-decoration: none;
+  color: deepSkyBlue;
+}
+
+body a:hover {
+  color: mediumOrchid;
+}
+
+body a:active {
+  color: skyBlue;
+}
+
+#slider-box {
+  position: relative;
+}
+
+#slider-box .slider:nth-of-type(1) {
+  background-image: url(../img/slider01.jpg);
+}
+
+#slider-box .slider:nth-of-type(2) {
+  background-image: url(../img/slider02.jpg);
+}
+
+#slider-box .slider:nth-of-type(3) {
+  background-image: url(../img/slider03.jpg);
+}
+
+#slider-box .slider {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation-name: slider-img-show;
+          animation-name: slider-img-show;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+#slider-box .slider h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 4.5em;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  padding: 90px 120px;
+  -webkit-animation: slider-text-show 1s .5s backwards;
+          animation: slider-text-show 1s .5s backwards;
+}
+
+#slider-box .next-btn {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  position: absolute;
+}
+
+#slider-box #prev {
+  border-color: transparent rgba(255, 255, 255, 0.4) transparent transparent;
+}
+
+#slider-box #next {
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
+}
+
+@-webkit-keyframes slider-img-show {
+  0% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes slider-img-show {
+  0% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes slider-text-show {
+  0% {
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slider-text-show {
+  0% {
+    -webkit-transform: translateX(-30vw);
+            transform: translateX(-30vw);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
