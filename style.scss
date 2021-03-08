@@ -28,19 +28,22 @@ body {
 }
 //通用設定 END =========================
 #slider-box {
-    //為了要絕對定位的子元素
-    position: relative;
-    //上圖
+    //容器設定 ===========
+    height: 100vh;
+    overflow: hidden;
+    position: relative;//為了要絕對定位的子元素
+    //各圖設定：上圖 ===========
     @for $i from 1 through 3 {
         .slider:nth-of-type(#{$i}) {
             background-image: url(../img/slider0#{$i}.jpg);
         }
     }
-    //基本樣式
+    //各圖設定：基本樣式 ===========
     .slider {
         height: 100vh;
         background-size: cover;
         background-repeat: no-repeat;
+        display: none;
         //動畫套用：全寫型態
         animation-name: slider-img-show;
         animation-duration: 2s; //持續時間、不寫預設0s
@@ -56,7 +59,11 @@ body {
             //* forwards  表示動畫前顯示的模式與動畫結束狀態相同（預設）
         }
     }
-    //上一張、下一張切換鈕
+    //各圖設定：啟動型態 ===========
+    .slider-active {
+        display: block;//initial會把bg-img也給還原掉。
+    }
+    //上、下一張切換鈕 ===========
     .next-btn {
         width: 0;
         height: 0;
@@ -71,8 +78,9 @@ body {
         border-color: transparent transparent transparent $c-btn;
     }
 }
-//動畫宣告 =========================
+//動畫宣告區 =========================
 @keyframes slider-img-show {
+    //進場效果：縮放 zoom out
     0% {
         transform: scale(1.15);
     }
@@ -81,6 +89,7 @@ body {
     }
 }
 @keyframes slider-text-show {
+    //進場效果：向右滑入
     0% {
         transform: translateX(-30vw);
     }
