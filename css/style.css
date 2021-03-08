@@ -57,8 +57,8 @@ body a:active {
   color: white;
   text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   padding: 90px 120px;
-  -webkit-animation: slider-text-show 1s .5s backwards;
-          animation: slider-text-show 1s .5s backwards;
+  -webkit-animation: slider-text-show 1s 0.5s backwards;
+          animation: slider-text-show 1s 0.5s backwards;
 }
 
 #slider-box .slider-active {
@@ -70,14 +70,55 @@ body a:active {
   height: 0;
   border: 50px solid;
   position: absolute;
+  top: 50%;
+  cursor: pointer;
+  -webkit-transition-property: opacity scale;
+  transition-property: opacity scale;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.4;
 }
 
-#slider-box #prev {
-  border-color: transparent rgba(255, 255, 255, 0.4) transparent transparent;
+#slider-box .next-btn:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
-#slider-box #next {
-  border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
+#slider-box #btn-prev {
+  border-color: transparent white transparent transparent;
+  left: -30px;
+}
+
+#slider-box #btn-next {
+  border-color: transparent transparent transparent white;
+  right: -30px;
+}
+
+#slider-box .dot-box {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#slider-box .dot-box .dots {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background-color: rgba(85, 85, 85, 0.5);
+  cursor: pointer;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+#slider-box .dot-box .dots:hover {
+  background-color: rgba(165, 42, 42, 0.7);
+}
+
+#slider-box .dot-box .dots-active {
+  background-color: burlywood;
 }
 
 @-webkit-keyframes slider-img-show {

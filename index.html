@@ -11,7 +11,9 @@
 
 <body>
     <div id="slider-box">
+        <!-- *呈現單位 ======================================================-->
         <div class="slider slider-active">
+            <!-- 只給預設顯示active的型態，其他用JS切換 -->
             <h1>物件一</h1>
         </div>
         <div class="slider">
@@ -20,15 +22,17 @@
         <div class="slider">
             <h1>物件三</h1>
         </div>
-        <div class="next-btn" id="prev"></div>
-        <div class="next-btn" id="next"></div>
+        <!-- *切換鈕 ========================================================-->
+        <div class="next-btn" id="btn-prev"></div>
+        <div class="next-btn" id="btn-next"></div>
+        <!-- *指引點點 ======================================================-->
         <div class="dot-box">
-            <span class="dots"></span>
+            <span class="dots dots-active"></span>
+            <!-- 只給預設顯示active的型態，其他用JS切換 -->
             <span class="dots"></span>
             <span class="dots"></span>
         </div>
     </div>
-
 
     <script src="./main.js"></script>
 </body>
