@@ -9,8 +9,17 @@ var interval, userInterval = box.getAttribute("data-crs-interval");//自動播�
 var timer = setInterval(autoPlay, interval) ;
 // 使用JS 內建的API：將函數以指定頻率重複執行
 // 存成變數以備用。
+var ifShowDots = box.getAttribute("data-crs-showdots") ;
+console.log("ifShowDots = " + ifShowDots) ;
 
-// Part 2 : 互動設定區 =========================
+// Part 2 : 馬上執行區 ==========================
+if(ifShowDots == "false") {//!都須字串賦值
+    var dotBox = document.getElementById("dot-box") ;
+    dotBox.style["display"] = "none" ;
+}
+showSlider();
+
+// Part 3 : 互動設定區 =========================
 nextBtn.onclick = next;
 prevBtn.onclick = prev;
 //! 不可以加函數的小括弧
@@ -26,8 +35,7 @@ for (let i = 0; i < dots.length; i++) {
 if (userInterval) interval = userInterval ;
 else interval = 3000 ;//自動播放的預設時間間隔
 
-// Part 3 : 馬上執行區 ==========================
-showSlider();
+
 
 // Part 4 : 函數宣告區 ==========================
 function showSlider() {
