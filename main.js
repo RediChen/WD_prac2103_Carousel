@@ -31,11 +31,8 @@ for (let i = 0; i < dots.length; i++) {
     //要放參數的函數就要另外用function格式去寫，
     // 否則會無法讀取
 }
-
 if (userInterval) interval = userInterval ;
 else interval = 3000 ;//自動播放的預設時間間隔
-
-
 
 // Part 4 : 函數宣告區 ==========================
 function showSlider() {
@@ -73,9 +70,7 @@ function autoPlay() {
     next();
 }
 
-
 //實務需求：須配合按鈕的點擊
-
 function resetTimer() {
     //重置計時器 = 還原＋重啟
     clearInterval(timer) ;
