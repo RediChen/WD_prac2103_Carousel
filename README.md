@@ -16,9 +16,14 @@ https://rediichen.github.io/WD_prac2103_Carousel/
     <script src="./main.js"></script>
 ```
 
+# 啟動設定
+用div將所要輪播的元素包起來，並命名為：
+```
+<div id="slider-box"> *your elements* </div>
+```
+
 # 屬性說明
 屬性關鍵字 | 屬性說明 | 給值的型態
 ---------|---------|---------
 data-crs-interval | 自動播放的切換頻率 | 整數毫秒
 data-crs-showdots | 是否要顯示座標點 | 布林值
-#
