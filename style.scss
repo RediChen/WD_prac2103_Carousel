@@ -95,6 +95,7 @@ body {
         bottom: 20px;
         width: 100%;
         text-align: center;
+        user-select: none;
 
         .dots {
             display: inline-block;//inline的好處是可以用tac
