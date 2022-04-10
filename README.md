@@ -3,7 +3,7 @@
 
 ～使用簡介如下～<br>
 # 範例展示
-https://rediichen.github.io/WD_prac2103_Carousel/
+https://redichen.github.io/WD_prac2103_Carousel/
 # CDN 連結
 將以下的程式碼放在head（標頭檔）中。
 ```
